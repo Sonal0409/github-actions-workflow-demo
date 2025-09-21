@@ -1,7 +1,13 @@
 ---
 name: this is my first github actions workflow
 # when to run the workflow = events
-on: workflow_dispatch  # manually run thw workflow
+on:
+ push:
+   branches:
+    - main
+    - dev
+    - test
+ workflow_dispatch:
 jobs:
   job1:
     runs-on: ubuntu-latest # an agent VM
